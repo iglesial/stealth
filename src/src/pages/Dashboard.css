@@ -1,0 +1,50 @@
+.dashboard {
+  text-align: center;
+  padding: 2rem;
+}
+
+.dashboard h1 {
+  color: #646cff;
+  margin-bottom: 1rem;
+}
+
+.dashboard p {
+  margin-bottom: 2rem;
+  color: #888;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 150px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+
+.stat-card:hover {
+  border-color: #646cff;
+}
+
+.stat-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #646cff;
+  margin: 0;
+}

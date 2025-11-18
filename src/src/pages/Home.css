@@ -13,6 +13,13 @@
   color: #888;
 }
 
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-link {
   display: inline-block;
   padding: 0.6em 1.2em;
@@ -35,4 +42,18 @@
 .nav-link:focus,
 .nav-link:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.logout-button {
+  background-color: #f44336;
+}
+
+.logout-button:hover {
+  border-color: #d32f2f;
+}
+
+.auth-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
 }

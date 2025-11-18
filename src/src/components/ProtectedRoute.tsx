@@ -9,7 +9,7 @@ function ProtectedRoute({ children }: ProtectedRouteProps) {
   const { authStatus } = useAuthenticator((context) => [context.authStatus])
 
   if (authStatus !== 'authenticated') {
-    return <Navigate to="/" replace />
+    return <Navigate to="/login" replace />
   }
 
   return <>{children}</>

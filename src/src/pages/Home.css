@@ -52,8 +52,29 @@
   border-color: #d32f2f;
 }
 
-.auth-container {
-  max-width: 500px;
+.subtitle {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 3rem;
+}
+
+.user-section,
+.guest-section {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+}
+
+.greeting {
+  color: #646cff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.primary-button {
+  background-color: #646cff !important;
+}
+
+.primary-button:hover {
+  background-color: #535bf2 !important;
+  border-color: #535bf2 !important;
 }

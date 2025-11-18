@@ -1,7 +1,5 @@
-import { useAuthenticator, Authenticator, ThemeProvider } from '@aws-amplify/ui-react'
+import { useAuthenticator } from '@aws-amplify/ui-react'
 import { Link } from 'react-router-dom'
-import { authTheme } from '../config/authTheme'
-import { authFormFields, authComponents } from '../config/authConfig'
 import './Home.css'
 
 function Home() {
@@ -10,10 +8,12 @@ function Home() {
   return (
     <div className="home">
       <h1>Welcome Home</h1>
+      <p className="subtitle">Your application landing page</p>
+
       {user ? (
-        <>
-          <p>Hello, {user.signInDetails?.loginId || 'User'}!</p>
-          <p>You are successfully signed in.</p>
+        <div className="user-section">
+          <p className="greeting">Hello, {user.signInDetails?.loginId || 'User'}!</p>
+          <p>You are signed in and ready to go.</p>
           <div className="button-group">
             <Link to="/dashboard" className="nav-link">
               Go to Dashboard
@@ -22,17 +22,18 @@ function Home() {
               Sign Out
             </button>
           </div>
-        </>
+        </div>
       ) : (
-        <div className="auth-container">
-          <ThemeProvider theme={authTheme}>
-            <Authenticator
-              formFields={authFormFields}
-              components={authComponents}
-              variation="default"
-              socialProviders={[]}
-            />
-          </ThemeProvider>
+        <div className="guest-section">
+          <p>Explore our application and access powerful features.</p>
+          <div className="button-group">
+            <Link to="/login" className="nav-link">
+              Sign In
+            </Link>
+            <Link to="/signup" className="nav-link primary-button">
+              Sign Up
+            </Link>
+          </div>
         </div>
       )}
     </div>

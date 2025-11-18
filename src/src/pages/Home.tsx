@@ -1,5 +1,7 @@
-import { useAuthenticator, Authenticator } from '@aws-amplify/ui-react'
+import { useAuthenticator, Authenticator, ThemeProvider } from '@aws-amplify/ui-react'
 import { Link } from 'react-router-dom'
+import { authTheme } from '../config/authTheme'
+import { authFormFields, authComponents } from '../config/authConfig'
 import './Home.css'
 
 function Home() {
@@ -23,8 +25,14 @@ function Home() {
         </>
       ) : (
         <div className="auth-container">
-          <p>Please sign in to access the dashboard.</p>
-          <Authenticator />
+          <ThemeProvider theme={authTheme}>
+            <Authenticator
+              formFields={authFormFields}
+              components={authComponents}
+              variation="default"
+              socialProviders={[]}
+            />
+          </ThemeProvider>
         </div>
       )}
     </div>
